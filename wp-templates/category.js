@@ -30,7 +30,7 @@ export default function Component(props) {
       />
       <Main>
         <>
-          <EntryHeader title={`Category: ${name}`} />
+          <EntryHeader title={`${name}`} />
           <Container>
             {posts.edges.map((post) => (
               <Excerpt
