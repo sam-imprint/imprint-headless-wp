@@ -54,10 +54,12 @@
 		width: 100%;
 		white-space: nowrap;
 		text-align: center;
+		text-transform: uppercase;
 
 		&:hover,
 		&:focus {
 			color: var(--wpe--navigation-menu--color--hover);
+			text-decoration:underline;
 		}
 
 		// Remove link underline when component is inside header.
