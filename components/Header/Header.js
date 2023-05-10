@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container, NavigationMenu, SkipNavigationLink } from '../../components';
 import styles from './Header.module.scss';
 
@@ -20,9 +21,15 @@ export default function Header({
           <div className={cx('navbar')}>
             <div className={cx('brand')}>
               <Link href="/">
-                <a className={cx('title')}>{title}</a>
+                <a className={cx('title')}>
+                <Image 
+                    src="https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/03/ID-Logo-LG.png"
+                    alt="Imprint Digital"
+                    width="173"
+                    height="29"
+                    priority='true' />
+                  </a>
               </Link>
-              {description && <p className={cx('description')}>{description}</p>}
             </div>
             <button
               type="button"
