@@ -39,12 +39,6 @@ export default function Component(props) {
             {siteDescription}
             <Link href="/">
             <a>
-            <Image 
-                    src={heroImage.sourceUrl}
-                    alt={heroImage.altText}
-                    width={heroImage.mediaDetails.width}
-                    height={heroImage.mediaDetails.height}
-                    priority='true' />
               </a>
               </Link>
             <h1>{heroH1}</h1>
@@ -67,26 +61,11 @@ Component.query = gql`
   ) {
     page(id: 51, idType: DATABASE_ID)  {
       homeOptions {
-        heroImage {
-          id
-          sourceUrl
-          altText
-          mediaDetails {
-            width
-            height
-          }
-        }
         heroH1
-        heroCopy
-        ctaBtn1
         hornsH2
         card1
         card2
-        card3
-        weAreH2
-        weAreCopy
-        weAreBtnUrl
-        weAreBtnText
+        card3 
         trustH2
         trustCode
         weServeH2
@@ -95,7 +74,6 @@ Component.query = gql`
         studiesCopy
         studiesBtnUrl
         studiesBtnText
-        ctaBtn2
       }
     }
     generalSettings {
