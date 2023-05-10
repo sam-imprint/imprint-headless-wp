@@ -2,14 +2,12 @@ import { useState } from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Container, NavigationMenu, SkipNavigationLink } from '../../components';
+import { Container, NavigationMenu, SkipNavigationLink, NavButton } from '../../components';
 import styles from './Header.module.scss';
 
 let cx = classNames.bind(styles);
 
 export default function Header({
-  title = 'Headless by WP Engine',
-  description,
   menuItems
 }) {
   const [isNavShown, setIsNavShown] = useState(false);
@@ -45,6 +43,7 @@ export default function Header({
               className={cx(['primary-navigation', isNavShown ? 'show' : undefined])}
               menuItems={menuItems}
             />
+            <NavButton></NavButton>
         </div>
       </Container>
     </header>
