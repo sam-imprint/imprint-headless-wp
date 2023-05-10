@@ -43,7 +43,6 @@ export default function Header({
               className={cx(['primary-navigation', isNavShown ? 'show' : undefined])}
               menuItems={menuItems}
             />
-            <NavButton></NavButton>
         </div>
       </Container>
     </header>
