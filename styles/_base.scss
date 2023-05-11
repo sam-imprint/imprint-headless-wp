@@ -57,3 +57,26 @@ img {
 	color: var(--wpe--color--white);
 	background-color: var(--wpe--color--accent);
 }
+li.nav_btn {
+	border:solid 1px #0c0c0c;
+	border-radius:4px;
+	a {
+		padding:0 1.5rem;
+		color:#0c0c0c;
+	}
+	a::after {
+		content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Contact-Arrow-ID.png);
+		margin-left:.5rem;
+		font-weight:700;
+	}
+	&:hover {
+		background-color:#0c0c0c;
+		a {
+			color:#fff;
+			text-decoration:none;
+		}
+		a::after {
+			filter: invert(100);
+		}
+	}
+}
