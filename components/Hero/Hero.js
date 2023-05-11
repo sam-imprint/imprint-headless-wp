@@ -3,6 +3,7 @@ import className from 'classnames/bind';
 import { Heading } from '../../components';
 import styles from './Hero.module.scss';
 import Image from 'next/image';
+import CtaButton from '../../components';
 
 let cx = className.bind(styles);
 
@@ -23,6 +24,7 @@ export default function Hero({ title, level = 'h1', children, className }) {
         height='480'
         priority='priority'
       />
+      <CtaButton/>
       {children}
     </div>
   );
