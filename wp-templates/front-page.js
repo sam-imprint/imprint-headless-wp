@@ -11,6 +11,7 @@ import {
   NavigationMenu,
   Hero,
   SEO,
+  CtaButton,
 } from '../components';
 
 export default function Component(props) {
@@ -35,16 +36,7 @@ export default function Component(props) {
       <Main>
         <Container>
           <Hero title={siteTitle} />
-          <div className="text-center">
-            {siteDescription}
-            <Link href="/">
-            <a>
-              </a>
-              </Link>
-            <h1>{heroH1}</h1>
-            <p>{heroCopy}</p>
-            <button>{ctaBtn1}</button>
-          </div>
+          <CtaButton/>
         </Container>
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />

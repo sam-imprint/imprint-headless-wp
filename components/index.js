@@ -14,4 +14,4 @@ export { Hero } from './Hero';
 export { Post } from './Post';
 export { Excerpt } from './Excerpt';
 export { SEO } from './SEO';
-export { CtaButton } './CtaButton'
+export { CtaButton } from './CtaButton';
