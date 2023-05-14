@@ -12,6 +12,7 @@ import {
   Hero,
   SEO,
   CtaButton,
+  HornCards,
 } from '../components';
 
 export default function Component(props) {
@@ -37,6 +38,7 @@ export default function Component(props) {
         <Container>
           <Hero title={siteTitle} />
           <CtaButton/>
+          <HornCards/>
         </Container>
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />
