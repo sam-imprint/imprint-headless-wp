@@ -6,6 +6,7 @@
     background:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Cyber-Horns.svg);
     background-position: 0 2rem;
     background-repeat: no-repeat;
+    background-color:transparent!important;
 }
 .copy {
         text-align: center;
@@ -49,11 +50,10 @@
     }
 
     &::after {
-        content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Grey-Flags.svg);
+        content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Accent-Flags-Grey.svg);
         position:absolute;
-        bottom:-1.25rem;
+        bottom:-1rem;
         right:0;
-        z-index:-1;
     }
 
     &:hover {
@@ -71,7 +71,7 @@
         }
 
         &::after {
-            content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Black-Flags.svg);
+            content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Accent-Flags-Black.svg);
         }
     }
 }
@@ -82,8 +82,9 @@
     font-weight:600;
     text-transform:uppercase;
     text-align:center;
-    margin-top:2rem;
+    margin:4rem auto;
     cursor: pointer;
+    width:fit-content;
 
     &::after {
         content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/CTA-Red-Arrow-2.svg);
