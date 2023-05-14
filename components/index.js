@@ -16,3 +16,4 @@ export { Excerpt } from './Excerpt';
 export { SEO } from './SEO';
 export { CtaButton } from './CtaButton';
 export { HornCards } from './HornCards';
+export { TrustSection } from './TrustSection';
