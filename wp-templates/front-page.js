@@ -14,6 +14,7 @@ import {
   CtaButton,
   HornCards,
   TrustSection,
+  Industries,
 } from '../components';
 
 export default function Component(props) {
@@ -41,6 +42,7 @@ export default function Component(props) {
           <CtaButton/>
           <HornCards/>
           <TrustSection/>
+          <Industries/>
         </Container>
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />

@@ -1,0 +1,15 @@
+.component {
+    display:flex;
+    flex-direction:column;
+    margin:100px auto;
+}
+.copy {
+        text-align: center;
+        text-transform: uppercase;
+        width:500px;
+        margin:0 auto 2.5rem auto;
+    
+    .headline_red {
+        color:#E11F26;
+    }
+}
