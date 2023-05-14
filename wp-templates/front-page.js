@@ -15,6 +15,7 @@ import {
   HornCards,
   TrustSection,
   Industries,
+  Services,
 } from '../components';
 
 export default function Component(props) {
@@ -43,6 +44,7 @@ export default function Component(props) {
           <HornCards/>
           <TrustSection/>
           <Industries/>
+          <Services />
         </Container>
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />
