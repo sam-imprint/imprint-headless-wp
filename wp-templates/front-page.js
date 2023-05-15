@@ -1,6 +1,4 @@
 import { useQuery, gql } from '@apollo/client';
-import Image from 'next/image';
-import Link from 'next/link';
 import * as MENUS from '../constants/menus';
 import { BlogInfoFragment } from '../fragments/GeneralSettings';
 import {
@@ -16,6 +14,7 @@ import {
   TrustSection,
   Industries,
   Services,
+  CaseStudies,
 } from '../components';
 
 export default function Component(props) {
@@ -45,6 +44,7 @@ export default function Component(props) {
           <TrustSection/>
           <Industries/>
           <Services />
+          <CaseStudies/>
         </Container>
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />

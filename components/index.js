@@ -19,3 +19,4 @@ export { HornCards } from './HornCards';
 export { TrustSection } from './TrustSection';
 export { Industries } from './Industries';
 export { Services } from './Services';
+export { CaseStudies } from './CaseStudies';
