@@ -3,7 +3,7 @@ import * as MENUS from '../constants/menus';
 import { BlogInfoFragment } from '../fragments/GeneralSettings';
 import {
   Header,
-  Hero,
+  QuoteHero,
   Footer,
   Main,
   Container,
@@ -11,6 +11,8 @@ import {
   SEO,
 } from '../components';
 import { getNextStaticProps } from '@faustwp/core';
+import Image from 'next/image';
+
 
 export default function Page(props) {
   const { data } = useQuery(Page.query, {
@@ -32,11 +34,15 @@ export default function Page(props) {
       />
       <Main>
         <Container>
-          <Hero title={title} />
-          <div className="text-center">
-            <p>This page is utilizing the Next.js File based routes.</p>
-            <code>pages/example.js</code>
-          </div>
+          <QuoteHero />
+          <Image
+            className='directions_map'
+            src='https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/ID-MAP-Placeholder-1.jpg'
+            alt='Find us!'
+            width='430'
+            height='591'
+            priority='priority'
+            />
         </Container>
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />
