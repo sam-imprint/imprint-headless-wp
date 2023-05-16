@@ -35,7 +35,7 @@ export default function Page(props) {
       />
       <Main>
         <Container>
-          <QuoteHero />
+            <QuoteHero />
             <ContactBody />
         </Container>
       </Main>

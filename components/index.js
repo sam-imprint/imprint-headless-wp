@@ -22,3 +22,4 @@ export { Services } from './Services';
 export { CaseStudies } from './CaseStudies';
 export { QuoteHero } from './QuoteHero';
 export { ContactBody } from './ContactBody';
+export { ContactForm } from './ContactForm';
