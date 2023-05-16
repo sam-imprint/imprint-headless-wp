@@ -21,3 +21,4 @@ export { Industries } from './Industries';
 export { Services } from './Services';
 export { CaseStudies } from './CaseStudies';
 export { QuoteHero } from './QuoteHero';
+export { ContactBody } from './ContactBody';

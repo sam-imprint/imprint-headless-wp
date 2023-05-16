@@ -9,6 +9,7 @@ import {
   Container,
   NavigationMenu,
   SEO,
+  ContactBody,
 } from '../components';
 import { getNextStaticProps } from '@faustwp/core';
 import Image from 'next/image';
@@ -35,14 +36,7 @@ export default function Page(props) {
       <Main>
         <Container>
           <QuoteHero />
-          <Image
-            className='directions_map'
-            src='https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/ID-MAP-Placeholder-1.jpg'
-            alt='Find us!'
-            width='430'
-            height='591'
-            priority='priority'
-            />
+            <ContactBody />
         </Container>
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />
