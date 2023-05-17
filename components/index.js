@@ -23,3 +23,5 @@ export { CaseStudies } from './CaseStudies';
 export { QuoteHero } from './QuoteHero';
 export { ContactBody } from './ContactBody';
 export { ContactForm } from './ContactForm';
+export { TeamHero } from './TeamHero';
+export { TeamBox } from './TeamBox';

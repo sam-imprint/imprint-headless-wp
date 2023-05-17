@@ -1,0 +1,99 @@
+.component {
+	text-align: left;
+	padding:.0;
+	line-height: 1.3;
+	margin-bottom:6rem;
+    margin-left:auto;
+    margin-right:auto;
+	max-width: 1109px;
+	position: relative;
+	display:flex;
+	flex-direction:column;
+	align-items: center;
+	justify-content: center;
+}
+
+.copy {
+    text-align: center;
+    text-transform: uppercase;
+    max-width:500px;
+    margin:0 auto 2.5rem auto;
+
+.headline_red {
+    color:#E11F26;
+}
+
+}
+
+.members_wrap {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:4rem;
+}
+
+.members_wrap a {
+    text-decoration: none;
+
+}
+
+.member_card {
+    padding:0;
+
+    .member_image{ 
+        background:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/member-background.svg);
+        background-repeat: no-repeat;
+        background-position: 0 110px;
+        background-size:cover;
+        position:relative;
+        transition:all .2s ease-in-out;
+
+        .member_title {
+            color:#fff;
+            font-size:1.63rem;
+            line-height:125%;
+            text-transform:uppercase;
+            text-align:center;
+            position:absolute;
+            bottom:0;
+            margin-bottom:0;
+            padding:8rem 0 1rem 0;
+            width:100%;
+            background: linear-gradient(180deg, rgba(225, 31, 38, 0) 0%, #E11F26 100%);
+        }
+    
+        &::after{
+            content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Accent-Flags-Grey.svg);
+            position:absolute;
+            top:22.5%;
+            right:-10.25%;
+            display:block;
+            transform:rotate(-90deg);
+        }
+
+        &:hover {
+            background-image:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/member-background-red.svg);
+
+            &::after {
+                content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Accent-Flags-Black.svg);
+            }
+        }
+
+    }
+
+    .member_name {
+        background:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Card-Title-Bottom.svg);
+        background-repeat: no-repeat;
+        color:#fff;
+        padding:0 .5rem;
+
+        h3 {
+            font-size:1.13rem;
+            font-weight:400;
+            text-transform: uppercase;
+            margin-bottom:0;
+        }
+    }
+
+}

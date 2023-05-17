@@ -1,0 +1,1 @@
+export { default as TeamHero } from './TeamHero';
