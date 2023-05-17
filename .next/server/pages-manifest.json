@@ -3,7 +3,8 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/[...wordpressNode]": "pages/[...wordpressNode].js",
+  "/case-studies": "pages/case-studies.js",
   "/api/faust/[[...route]]": "pages/api/faust/[[...route]].js",
   "/about": "pages/about.js",
-  "/": "pages/index.js"
+  "/services": "pages/services.js"
 }
