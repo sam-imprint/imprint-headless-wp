@@ -25,3 +25,4 @@ export { ContactBody } from './ContactBody';
 export { ContactForm } from './ContactForm';
 export { TeamHero } from './TeamHero';
 export { TeamBox } from './TeamBox';
+export { CaseStudy } from './CaseStudy';
