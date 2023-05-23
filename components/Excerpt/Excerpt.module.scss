@@ -1,9 +1,42 @@
 .component {
   padding-bottom: 4rem;
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  max-width:1100px;
+  margin:0 auto;
 }
 
-.title {
-  margin-bottom: 0.5rem;
+.copy {
+  margin-left:20px;
+
+  a {
+    text-decoration:none;
+
+    &:hover {
+      color:#E11F26;
+      text-decoration:underline;
+    }
+  }
+
+  h2 {
+    font-size:1.38rem;
+    text-transform:uppercase;
+  }
+
+}
+
+.read_more {
+  color:#E11F26;
+  text-transform: uppercase;
+  font-size:1.13rem;
+  font-weight:600;
+
+  &::after {
+    content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/CTA-Red-Arrow-2.svg);
+    display:inline-block;
+    margin-left:10px;
+}
 }
 
 .postInfo {
@@ -13,4 +46,14 @@
 .featuredImage {
   margin: 0;
   margin-bottom: 1rem;
+  width:545px;
+  height:auto;
+  display:block;
+  position:relative;
+
+  &::after {
+    content:url('https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/featured-image-underline.svg');
+    position:absolute;
+    bottom:-10px;
+  }
 }

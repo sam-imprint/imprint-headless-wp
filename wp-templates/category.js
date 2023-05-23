@@ -6,11 +6,11 @@ import {
   Footer,
   Main,
   Container,
-  EntryHeader,
   NavigationMenu,
   Excerpt,
   FeaturedImage,
   SEO,
+  ArchiveHeader,
 } from '../components';
 
 export default function Component(props) {
@@ -30,7 +30,7 @@ export default function Component(props) {
       />
       <Main>
         <>
-          <EntryHeader title={`${name}`} />
+          <ArchiveHeader title={`${name}`} />
           <Container>
             {posts.edges.map((post) => (
               <Excerpt
