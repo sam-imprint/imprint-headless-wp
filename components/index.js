@@ -29,3 +29,4 @@ export { CaseStudy } from './CaseStudy';
 export { ArchiveHeader } from './ArchiveHeader';
 export { ServiceHero } from './ServiceHero';
 export { OurWork } from './OurWork';
+export { HireUs } from './HireUs';

@@ -13,6 +13,7 @@ import {
   CtaButton,
   HornCards,
   Industries,
+  HireUs,
 } from '../components';
 import { getNextStaticProps } from '@faustwp/core';
 import Image from 'next/image';
@@ -42,6 +43,8 @@ export default function Page(props) {
     caseLogo2Alt:"Willow Boutique",
     caseLogo3:"https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/noco-jj-logo-SPEC-177-108.png",
     case3LogoAlt:"NoCo JiuJitsu",
+    wpLogo:"https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/earles-logo-SPEC-177-108.png",
+    wpLogoAlt:"Earle's Floral and Gifts",
     }
    ];
 
@@ -51,7 +54,11 @@ export default function Page(props) {
         <ServiceHero {...content}/>
         <OurWork {...content}/>
     </div>
-    
+   )}
+ );
+
+ const whyHire= content.map((content) => {
+    return ( <HireUs {...content} />
    )}
  );
 
@@ -67,6 +74,7 @@ export default function Page(props) {
         <Container>
             {contentComponents}
             <CtaButton />
+            {whyHire}
             <HornCards />
             <Industries />
         </Container>

@@ -2,5 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/service": "pages/service.js"
+  "/service": "pages/service.js",
+  "/api/faust/[[...route]]": "pages/api/faust/[[...route]].js"
 }
