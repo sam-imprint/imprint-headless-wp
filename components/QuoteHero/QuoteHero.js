@@ -6,7 +6,7 @@ import styles from './QuoteHero.module.scss';
 
 let cx = className.bind(styles);
 
-let contents = [
+/* let contents = [
   { 
   title: "Holla At Us", 
   subtitle: "Comprehensive Digital Marketing Solutions", 
@@ -14,29 +14,25 @@ let contents = [
   quote:"What a wonderful team at IMPRINT! They are responsive, kind and good to their people. They hit deadlines and are always supportive of projects put in front of them. A great partner indeed!",
   source:"~ Christine Forster (My Big Day)",
 }
- ];
+ ]; */
 
-export default function QuoteHero({ level = 'h1', className }) {
+export default function QuoteHero(props, {level = 'h1', className }) {
 
-  const contentComponents= contents.map((content) => (
+  
+
+  return (
     <div className={cx(['component', className])}>
       <div className={cx('copy')}>
       <Heading level={level}>
-        <span className={cx('title')}>{content.title}</span>
+        <span className={cx('title')}>{props.title}</span>
       </Heading>
-      <h2 className={cx('subtitle')}>{content.subtitle}</h2>
-      <p>{content.copy}</p>
+      <h2 className={cx('subtitle')}>{props.subtitle}</h2>
+      <p>{props.copy}</p>
       </div>
       <div className={cx('quote_box')}>
-        <p className={cx('quote')}>{content.quote}</p>
-        <p className={cx('source')}>{content.source}</p>
+        <p className={cx('quote')}>{props.quote}</p>
+        <p className={cx('source')}>{props.source}</p>
       </div>
-      </div>
-
-));
-  return (
-      <div>
-      {contentComponents}
       </div>
 
   );
