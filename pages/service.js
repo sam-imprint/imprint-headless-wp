@@ -10,6 +10,9 @@ import {
   NavigationMenu,
   SEO,
   OurWork,
+  CtaButton,
+  HornCards,
+  Industries,
 } from '../components';
 import { getNextStaticProps } from '@faustwp/core';
 import Image from 'next/image';
@@ -63,6 +66,9 @@ export default function Page(props) {
       <Main>
         <Container>
             {contentComponents}
+            <CtaButton />
+            <HornCards />
+            <Industries />
         </Container>
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />
