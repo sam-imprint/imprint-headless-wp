@@ -9,15 +9,13 @@ let cx = className.bind(styles);
 
 export default function QuoteHero(props, {level = 'h1', className }) {
 
-  
-
   return (
     <div className={cx(['component', className])}>
         <div className={cx('hero_img_wrap')}>
         <Image
             className={cx('hero_img')}
-            src='https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/leadership-binoculars-cut.png'
-            alt='What we do for you!'
+            src={props.heroImg}
+            alt={props.heroImgAlt}
             width='355'
             height='421'
             priority='priority'

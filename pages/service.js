@@ -31,6 +31,8 @@ export default function Page(props) {
     copy:"Customized, data-driven, and holistic marketing strategies that help launch, scale, and empower brands of all sizes for growth.",
     linkText:"Find Out How You Can Benefit",
     linkUrl:"/",
+    heroImg:"https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/leadership-binoculars-cut.png",
+    heroImgAlt:"What we do for you!",
   }
    ];
 
