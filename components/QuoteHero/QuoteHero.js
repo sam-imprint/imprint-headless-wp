@@ -6,16 +6,6 @@ import styles from './QuoteHero.module.scss';
 
 let cx = className.bind(styles);
 
-/* let contents = [
-  { 
-  title: "Holla At Us", 
-  subtitle: "Comprehensive Digital Marketing Solutions", 
-  copy:"Helping organizations establish their beachhead. Your digital marketing partner that ensures your brand thrives.", 
-  quote:"What a wonderful team at IMPRINT! They are responsive, kind and good to their people. They hit deadlines and are always supportive of projects put in front of them. A great partner indeed!",
-  source:"~ Christine Forster (My Big Day)",
-}
- ]; */
-
 export default function QuoteHero(props, {level = 'h1', className }) {
 
   

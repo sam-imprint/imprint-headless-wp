@@ -27,3 +27,4 @@ export { TeamHero } from './TeamHero';
 export { TeamBox } from './TeamBox';
 export { CaseStudy } from './CaseStudy';
 export { ArchiveHeader } from './ArchiveHeader';
+export { ServiceHero } from './ServiceHero';
