@@ -9,7 +9,7 @@ import {
   Container,
   NavigationMenu,
   SEO,
-  Services,
+  OurWork,
 } from '../components';
 import { getNextStaticProps } from '@faustwp/core';
 import Image from 'next/image';
@@ -33,12 +33,23 @@ export default function Page(props) {
     linkUrl:"/",
     heroImg:"https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/leadership-binoculars-cut.png",
     heroImgAlt:"What we do for you!",
-  }
+    caseLogo:"https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/earles-logo-SPEC-177-108.png",
+    caseLogoAlt:"Earle's Floral and Gifts",
+    caseLogo2:"https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/vintage-willows-SPEC-177-108.png",
+    caseLogo2Alt:"Willow Boutique",
+    caseLogo3:"https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/noco-jj-logo-SPEC-177-108.png",
+    case3LogoAlt:"NoCo JiuJitsu",
+    }
    ];
 
    const contentComponents= content.map((content) => {
-    return <ServiceHero {...content}/>
-   }
+    return (
+    <div>
+        <ServiceHero {...content}/>
+        <OurWork {...content}/>
+    </div>
+    
+   )}
  );
 
   return (
@@ -52,7 +63,6 @@ export default function Page(props) {
       <Main>
         <Container>
             {contentComponents}
-            <Services />
         </Container>
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />
