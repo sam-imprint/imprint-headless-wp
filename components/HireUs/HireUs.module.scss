@@ -30,6 +30,24 @@
     }
 }
 
+.wp_wrap {
+    padding:2rem 2rem;
+    background:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/06/white-paper-box-bg.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+}
+.wp_hero {
+    display:flex;
+    flex-direction:row;
+    margin-bottom:1rem;
+    align-items: center;
+    justify-content: center;
+}
+.wp_hero h3 {
+    text-transform:uppercase;
+    width:60%;
+}
 .cta_link {
     color:#E11F26;
     font-size:1.13rem;

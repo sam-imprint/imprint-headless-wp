@@ -32,6 +32,7 @@ export default function HireUs(props, {level = 'h2', className }) {
                 height='96'
                 priority='priority'
             />
+            <h3>Branding strategy + execution for earle’s florist & gifts</h3>
             </div>
             <div className={cx('wp_copy')}>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ullamcorper ex a consequat posuere. Curabitur rhoncus ante nec ultrices elementum. Donec sit amet enim elit. In pulvinar sit amet urna et lobortis.</p>
