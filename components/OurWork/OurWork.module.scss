@@ -15,18 +15,6 @@
 	justify-content: center;
 	flex-wrap:wrap;
 
-    &::before {
-        content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/06/our_work_flags.svg);
-        position:absolute;
-        left:0;
-    }
-    &::after {
-        content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/06/our_work_flags.svg);
-        position:absolute;
-        right:0;
-        transform:rotate(180deg);
-    }
-
 }
 
 .title {
@@ -45,23 +33,18 @@
 	}
 }
 
-.cta_link {
-    color:#E11F26;
-    font-size:1.13rem;
-    font-weight:600;
-    text-transform:uppercase;
-    text-align:center;
-    margin:4rem auto;
-    cursor: pointer;
-    width:fit-content;
-
-    &::after {
-        content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/CTA-Red-Arrow-2.svg);
-        display:inline-block;
-        margin-left:10px;
+.logo_wrap {
+    &::before {
+        content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/06/our_work_flags.svg);
+        position:absolute;
+        left:0;
+        top:50%;
     }
-
-    &:hover {
-        text-decoration:underline;
+    &::after {
+        content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/06/our_work_flags.svg);
+        position:absolute;
+        right:0;
+        top:50%;
+        transform:rotate(180deg);
     }
 }
