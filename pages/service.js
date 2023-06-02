@@ -14,6 +14,7 @@ import {
   HornCards,
   Industries,
   HireUs,
+  AboutUs,
 } from '../components';
 import { getNextStaticProps } from '@faustwp/core';
 import Image from 'next/image';
@@ -76,6 +77,7 @@ export default function Page(props) {
             <CtaButton />
             {whyHire}
             <HornCards />
+            <AboutUs />
             <Industries />
         </Container>
       </Main>
