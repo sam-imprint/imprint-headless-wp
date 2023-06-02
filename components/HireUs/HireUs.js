@@ -13,7 +13,7 @@ export default function HireUs(props, {level = 'h2', className }) {
     <div className={cx(['component', className])}>
         <div className={cx('hire_copy')}>
         <Heading level={level}>
-                <span className={cx('title')}>Why Hiring A Fractional CMO Is Worth The Investment</span>
+                <span className={cx('title')}>Why Hiring A Fractional CMO Is <span className={cx('accent')}>Worth</span> The Investment</span>
         </Heading>
         <ul  className={cx('hire_list')}>
             <li>Marketing Leadership and Expertise</li>
