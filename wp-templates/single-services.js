@@ -11,11 +11,11 @@ export default function SingleService(props) {
   );
 }
 
-SingleMovie.variables = ({ uri }) => {
+SingleService.variables = ({ uri }) => {
   return { uri };
 };
 
-SingleMovie.query = gql`
+SingleService.query = gql`
   query GetServiceByUri($uri: String!) {
     nodeByUri(uri: $uri) {
       ... on NodeWithTitle {
