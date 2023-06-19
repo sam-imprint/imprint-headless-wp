@@ -25,6 +25,21 @@ export default function Page(props) {
   const primaryMenu = data?.headerMenuItems?.nodes ?? [];
   const footerMenu = data?.footerMenuItems?.nodes ?? [];
 
+  const content = [
+    { 
+    title: "Holla At Us", 
+    subtitle: "Comprehensive Digital Marketing Solutions", 
+    copy:"Helping organizations establish their beachhead. Your digital marketing partner that ensures your brand thrives.", 
+    quote:"What a wonderful team at IMPRINT! They are responsive, kind and good to their people. They hit deadlines and are always supportive of projects put in front of them. A great partner indeed!",
+    source:"~ Christine Forster (My Big Day)",
+  }
+   ];
+
+   const contentComponents= content.map((content) => {
+    return <QuoteHero {...content}/>
+   }
+ );
+
   return (
     <>
       <SEO title={siteTitle} description={siteDescription} />
@@ -35,7 +50,7 @@ export default function Page(props) {
       />
       <Main>
         <Container>
-            <QuoteHero />
+            {contentComponents}
             <ContactBody />
         </Container>
       </Main>
