@@ -7,15 +7,14 @@ import Image from 'next/image';
 
 let cx = className.bind(styles);
 
-export default function QuoteHero(props, {level = 'h1', className }) {
+export default function QuoteHero({level = 'h1', className, serviceTitle, heroCopy, heroBtnText, heroBtnUrl, image, ...props }) {
 
   return (
     <div className={cx(['component', className])}>
         <div className={cx('hero_img_wrap')}>
         <Image
             className={cx('hero_img')}
-            src={props.heroImg}
-            alt={props.heroImgAlt}
+            src={image}
             width='355'
             height='421'
             priority='priority'
@@ -23,11 +22,11 @@ export default function QuoteHero(props, {level = 'h1', className }) {
         </div>
         <div className={cx('copy')}>
             <Heading level={level}>
-                <span className={cx('title')}>{props.title}</span>
+                <span className={cx('title')}>{serviceTitle}</span>
             </Heading>
-            <p>{props.copy}</p>
-            <Link href={props.linkUrl}><span className={cx('cta_link')}>{props.linkText}</span></Link>
-            <div className={cx('vid_btn')}>SEE WHAT OUR FRACTIONAL CMOs DO</div>
+            <p>{heroCopy}</p>
+            <Link href={heroBtnUrl}><span className={cx('cta_link')}>{heroBtnText}</span></Link>
+            {/* <div className={cx('vid_btn')}>SEE WHAT OUR FRACTIONAL CMOs DO</div> -->*/}
         </div>
     </div>
 

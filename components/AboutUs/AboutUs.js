@@ -15,8 +15,8 @@ export default function AboutUs(props, {level = 'h2', className }) {
                 className={cx('about_img')}
                 src="https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/ID-Icon-Video-Color.gif"
                 alt="Meet Imprint!"
-                width='158'
-                height='96'
+                width='480'
+                height='480'
                 priority='priority'
             />
         <div className={cx('about_copy')}>

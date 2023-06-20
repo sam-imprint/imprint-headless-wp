@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 let cx = className.bind(styles);
 
-export default function HireUs(props, {level = 'h2', className }) {
+export default function HireUs({level = 'h2', className, case1, ...props }) {
 
   return (
     <div className={cx(['component', className])}>
@@ -26,8 +26,8 @@ export default function HireUs(props, {level = 'h2', className }) {
             <div className={cx('wp_hero')}>
             <Image
                 className={cx('wp_logo')}
-                src={props.wpLogo}
-                alt={props.wpLogoAlt}
+                src={props.uri}
+                alt={props.altText}
                 width='158'
                 height='96'
                 priority='priority'
