@@ -30,7 +30,22 @@ export default function Component(props) {
   const primaryMenu = props?.data?.headerMenuItems?.nodes ?? [];
   const footerMenu = props?.data?.footerMenuItems?.nodes ?? [];
   const { title, content } = props.data.service;
-  const { serviceTitle, heroCopy, heroBtnText, heroBtnUrl, heroimage, case3, bulletsTitleH2, bulletsList } = props.data.service.servicesOptions;
+  const { 
+    serviceTitle, 
+    heroCopy, 
+    heroBtnText, 
+    heroBtnUrl, 
+    heroimage, 
+    case1,
+    case2,
+    case3, 
+    bulletsTitleH2, 
+    bulletsList, 
+    whitePaperTitleH3,
+    whitePaperCopy,
+    whitePaperBtnUrl,
+    whitePaperBtnText,
+  } = props.data.service.servicesOptions;
 
   return (
     <>
@@ -57,9 +72,22 @@ export default function Component(props) {
               heroBtnText={heroBtnText}
               heroBtnUrl={heroBtnUrl}
             />
+            <OurWork
+              case1={case1?.sourceUrl}
+              case1Alt={case1?.altText}
+              case2={case2?.sourceUrl}
+              case2Alt={case2?.altText}
+              case3={case3?.sourceUrl}
+              case3Alt={case3?.sourceUrl}
+            />
             <HireUs
               case3={case3?.sourceUrl}
               bulletsTitleH2={bulletsTitleH2}
+              bulletsList={bulletsList}
+              whitePaperTitleH3={whitePaperTitleH3}
+              whitePaperCopy={whitePaperCopy}
+              whitePaperBtnUrl={whitePaperBtnUrl}
+              whitePaperBtnText={whitePaperBtnText}
             />
             <CtaButton />
             <HornCards />

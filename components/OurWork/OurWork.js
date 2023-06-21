@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 let cx = className.bind(styles);
 
-export default function OurWork(props, {level = 'h2', className }) {
+export default function OurWork({level = 'h2', className, case1, case1Alt, case2, case2Alt, case3, case3Alt, ...props}) {
 
   return (
     <div className={cx(['component', className])}>
@@ -17,24 +17,24 @@ export default function OurWork(props, {level = 'h2', className }) {
         <div className={cx('logo_wrap')}>
         <Image
             className={cx('case_logo')}
-            src={props.caseLogo}
-            alt={props.caseLogoAlt}
+            src={case1}
+            alt={case1Alt}
             width='158'
             height='96'
             priority='priority'
         />
         <Image
             className={cx('case_logo')}
-            src={props.caseLogo2}
-            alt={props.caseLogo2Alt}
+            src={case2}
+            alt={case2Alt}
             width='158'
             height='96'
             priority='priority'
         />
         <Image
             className={cx('case_logo')}
-            src={props.caseLogo3}
-            alt={props.caseLogo3Alt}
+            src={case3}
+            alt={case3Alt}
             width='158'
             height='96'
             priority='priority'

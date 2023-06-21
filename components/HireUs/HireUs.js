@@ -7,7 +7,17 @@ import Image from 'next/image';
 
 let cx = className.bind(styles);
 
-export default function HireUs({level = 'h2', className, case3, bulletsTitleH2, ...props }) {
+export default function HireUs({
+    level = 'h2', 
+    className, 
+    case3, 
+    bulletsTitleH2, 
+    bulletsList, 
+    whitePaperTitleH3,
+    whitePaperCopy,
+    whitePaperBtnUrl,
+    whitePaperBtnText,
+    ...props }) {
 
   return (
     <div className={cx(['component', className])}>
@@ -15,11 +25,7 @@ export default function HireUs({level = 'h2', className, case3, bulletsTitleH2, 
         <Heading level={level}>
             <span className={cx('title')} dangerouslySetInnerHTML={{ __html: bulletsTitleH2 ?? '' }} />
         </Heading>
-        <ul  className={cx('hire_list')}>
-            <li>Marketing Leadership and Expertise</li>
-            <li>Don't Have to Hire Internally</li>
-            <li>Save Your Time and Budget</li>
-        </ul>
+        <ul className={cx('hire_list')} dangerouslySetInnerHTML={{ __html: bulletsList ?? '' }} />
         </div>
 
         <div className={cx('wp_wrap')}>
@@ -32,11 +38,11 @@ export default function HireUs({level = 'h2', className, case3, bulletsTitleH2, 
                 height='96'
                 priority='priority'
             />
-            <h3>Branding strategy + execution for earle’s florist & gifts</h3>
+            <h3>{whitePaperTitleH3}</h3>
             </div>
             <div className={cx('wp_copy')}>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ullamcorper ex a consequat posuere. Curabitur rhoncus ante nec ultrices elementum. Donec sit amet enim elit. In pulvinar sit amet urna et lobortis.</p>
-                <Link href="/"><span className={cx('cta_link')}>White Paper</span></Link>
+                <p>{whitePaperCopy}</p>
+                <Link href={whitePaperBtnUrl}><span className={cx('cta_link')}>{whitePaperBtnText}</span></Link>
             </div>
         </div>
     </div>
