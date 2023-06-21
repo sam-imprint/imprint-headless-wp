@@ -7,13 +7,13 @@ import Image from 'next/image';
 
 let cx = className.bind(styles);
 
-export default function HireUs({level = 'h2', className, case1, ...props }) {
+export default function HireUs({level = 'h2', className, case3, bulletsTitleH2, ...props }) {
 
   return (
     <div className={cx(['component', className])}>
         <div className={cx('hire_copy')}>
         <Heading level={level}>
-                <span className={cx('title')}>Why Hiring A Fractional CMO Is <span className={cx('accent')}>Worth</span> The Investment</span>
+            <span className={cx('title')} dangerouslySetInnerHTML={{ __html: bulletsTitleH2 ?? '' }} />
         </Heading>
         <ul  className={cx('hire_list')}>
             <li>Marketing Leadership and Expertise</li>
@@ -26,7 +26,7 @@ export default function HireUs({level = 'h2', className, case1, ...props }) {
             <div className={cx('wp_hero')}>
             <Image
                 className={cx('wp_logo')}
-                src={case1}
+                src={case3}
                 alt={props.altText}
                 width='158'
                 height='96'

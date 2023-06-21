@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 let cx = className.bind(styles);
 
-export default function QuoteHero({level = 'h1', className, serviceTitle, heroCopy, heroBtnText, heroBtnUrl, heroimage, ...props }) {
+export default function QuoteHero({level = 'h1', className, serviceTitle, heroCopy, heroBtnText, heroBtnUrl, heroimage, heroAlt, ...props }) {
 
   return (
     <div className={cx(['component', className])}>
@@ -16,7 +16,7 @@ export default function QuoteHero({level = 'h1', className, serviceTitle, heroCo
             className={cx('hero_img')}
             layout='fill'
             src={heroimage}
-
+            alt={heroAlt}
             priority='priority'
             sizes="(max-width: 768px) 100vw"
         />

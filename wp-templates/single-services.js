@@ -30,7 +30,7 @@ export default function Component(props) {
   const primaryMenu = props?.data?.headerMenuItems?.nodes ?? [];
   const footerMenu = props?.data?.footerMenuItems?.nodes ?? [];
   const { title, content } = props.data.service;
-  const { serviceTitle, heroCopy, heroBtnText, heroBtnUrl, heroimage, case1, bulletsTitleH2, bulletsList } = props.data.service.servicesOptions;
+  const { serviceTitle, heroCopy, heroBtnText, heroBtnUrl, heroimage, case3, bulletsTitleH2, bulletsList } = props.data.service.servicesOptions;
 
   return (
     <>
@@ -52,12 +52,14 @@ export default function Component(props) {
             <ServiceHero
               serviceTitle={serviceTitle}
               heroimage={heroimage?.sourceUrl}
+              heroAlt={heroimage?.altText}
               heroCopy={heroCopy}
               heroBtnText={heroBtnText}
               heroBtnUrl={heroBtnUrl}
             />
             <HireUs
-              case1={case1?.sourceUrl}
+              case3={case3?.sourceUrl}
+              bulletsTitleH2={bulletsTitleH2}
             />
             <CtaButton />
             <HornCards />
@@ -95,10 +97,12 @@ Component.query = gql`
           case2 {
             altText
             uri
+            sourceUrl
           }
           case3 {
             altText
             uri
+            sourceUrl
           }
           bulletsList
           bulletsTitleH2
