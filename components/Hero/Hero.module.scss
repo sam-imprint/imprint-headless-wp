@@ -8,16 +8,26 @@
 	max-width: var(--wpe--container--max-width);
 	position: relative;
 	display:flex;
-	direction:row;
+	flex-direction:row;
 	align-items: center;
 	justify-content: center;
 	flex-wrap:wrap-reverse;
 	background-image:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Grey-Cross-BG.svg),url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Grey-Cross-BG.svg),url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Grey-Cross-BG.svg),url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Grey-Cross-BG.svg);
 	background-position: 5% 0, 95% 0, 5% 100%, 95% 100%;
 	background-repeat: no-repeat;
+
+	@media (max-width: $breakpoint-small) {
+		background-position: 0 0, 100% 0, 0 100%, 100% 100%;
+		padding: 1.25em 4%;
+		margin-bottom:1.5rem;
+	}
 }
 .copy {
 	width:50%;
+
+	@media (max-width: $breakpoint-small) {
+		width:100%;
+	}
 }
 .title {
 	display: block;

@@ -1,3 +1,5 @@
+@import "styles/breakpoints";
+
 .component {
     display:flex;
     flex-direction:column;
@@ -8,6 +10,11 @@
     background-repeat: no-repeat;
     background-color:transparent!important;
     background-size:contain;
+
+    @media (max-width: $breakpoint-small) {
+        background:none;
+    }
+
 }
 .copy {
         text-align: center;
@@ -17,6 +24,10 @@
     
     .headline_red {
         color:#E11F26;
+    }
+
+    @media (max-width: $breakpoint-small) {
+    margin-bottom:1rem;
     }
 }
 .cards_wrap {
@@ -40,6 +51,7 @@
     position:relative;
     transition: all .2s ease-in-out;
     margin-bottom:1.5rem;
+    cursor:crosshair;
 
     h3 {
         text-transform: uppercase;
@@ -89,6 +101,10 @@
     margin:4rem auto;
     cursor: pointer;
     width:fit-content;
+
+    @media (max-width: $breakpoint-small) {
+        margin:2rem auto;
+    }
 
     &::after {
         content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/CTA-Red-Arrow-2.svg);
