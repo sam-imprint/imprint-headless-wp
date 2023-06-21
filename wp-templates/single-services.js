@@ -80,6 +80,7 @@ export default function Component(props) {
               case3={case3?.sourceUrl}
               case3Alt={case3?.sourceUrl}
             />
+            <CtaButton />
             <HireUs
               case3={case3?.sourceUrl}
               bulletsTitleH2={bulletsTitleH2}
@@ -89,7 +90,6 @@ export default function Component(props) {
               whitePaperBtnUrl={whitePaperBtnUrl}
               whitePaperBtnText={whitePaperBtnText}
             />
-            <CtaButton />
             <HornCards />
             <AboutUs />
             <Industries />
