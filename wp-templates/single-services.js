@@ -35,7 +35,17 @@ export default function Component(props) {
     heroCopy, 
     heroBtnText, 
     heroBtnUrl, 
-    heroimage, 
+    heroimage,
+    hornsH2,
+    hornsbtnurl,
+    hornsbtntext,
+    card1title,
+    card1,
+    card2title,
+    card2,
+    card3title,
+    
+    card3, 
     case1,
     case2,
     case3, 
@@ -90,7 +100,17 @@ export default function Component(props) {
               whitePaperBtnUrl={whitePaperBtnUrl}
               whitePaperBtnText={whitePaperBtnText}
             />
-            <HornCards />
+            <HornCards
+            hornsH2={hornsH2}
+            card1Title={card1title}
+            card1={card1}
+            card2Title={card2title}
+            card2={card2}
+            card3Title={card3title}
+            card3={card3}
+            hornsBtnText={hornsbtntext}
+            hornsBtnUrl={hornsbtnurl}
+          />
             <AboutUs />
             <Industries />
           </Container>
@@ -134,15 +154,18 @@ Component.query = gql`
           }
           bulletsList
           bulletsTitleH2
-          card1
-          card2
-          card3
           heroBtnText
           heroBtnUrl
           heroCopy
-          hornsBtnText
-          hornsBtnUrl
           hornsH2
+          hornsbtntext
+          hornsbtnurl
+          card1title
+          card1
+          card2title
+          card2
+          card3title
+          card3 
           serviceTitle
           whitePaperBtnText
           whitePaperBtnUrl

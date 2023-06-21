@@ -26,7 +26,16 @@ export default function Component(props) {
     data?.generalSettings;
   const primaryMenu = data?.headerMenuItems?.nodes ?? [];
   const footerMenu = data?.footerMenuItems?.nodes ?? [];
-  const { heroImage, heroH1, heroCopy, ctaBtn1 } = props?.data?.page.homeOptions ?? [];
+  const { 
+    hornsH2, 
+    hornsbtntext, 
+    hornsbtnurl,
+    card1title,
+    card2title,
+    card3title, 
+    card1, 
+    card2, 
+    card3 } = props?.data?.page.homeOptions ?? [];
 
   return (
     <>
@@ -40,7 +49,17 @@ export default function Component(props) {
         <Container>
           <Hero title={siteTitle} />
           <CtaButton/>
-          <HornCards/>
+          <HornCards
+            hornsH2={hornsH2}
+            card1Title={card1title}
+            card1={card1}
+            card2Title={card2title}
+            card2={card2}
+            card3Title={card3title}
+            card3={card3}
+            hornsBtnText={hornsbtntext}
+            hornsBtnUrl={hornsbtnurl}
+          />
           <TrustSection/>
           <Industries/>
           <Services />
@@ -63,8 +82,13 @@ Component.query = gql`
       homeOptions {
         heroH1
         hornsH2
+        hornsbtntext
+        hornsbtnurl
+        card1title
         card1
+        card2title
         card2
+        card3title
         card3 
         trustH2
         trustCode

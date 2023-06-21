@@ -13,20 +13,26 @@ let cards = [
       
     ];
 
-export default function HornCards({ className }) {
-    const cardsComponents= cards.map((card) => (
-      <div className={cx('cards')}>
-        <h3>{card.title}</h3>
-        <p>{card.copy}</p>
-      </div>
-    ));
+export default function HornCards({ className, hornsH2, card1, card1Title, card2, card2Title, card3, card3Title, hornsBtnText, hornsBtnUrl  }) {
+
     return (
     <div className={cx(['component', className])}>
-      <div className={cx('copy')}><h2>Faster Growth with a <span className={cx('headline_red')}>Fractional </span>Chief Marketing Officer</h2></div>
+      <div className={cx('copy')}><h2 dangerouslySetInnerHTML={{ __html: hornsH2 ?? '' }} /></div>
     <div className={cx('cards_wrap')}>
-      {cardsComponents}
+      <div className={cx('cards')}>
+        <h3>{card1Title}</h3>
+        <p>{card1}</p>
       </div>
-    <Link href="/"><span className={cx('cta_link')}>Hire Your New CMO</span></Link>
+      <div className={cx('cards')}>
+        <h3>{card2Title}</h3>
+        <p>{card2}</p>
+      </div>
+      <div className={cx('cards')}>
+        <h3>{card3Title}</h3>
+        <p>{card3}</p>
+      </div>
+      </div>
+    <Link href={hornsBtnUrl}><span className={cx('cta_link')}>{hornsBtnText}</span></Link>
     </div>
   );
 }
