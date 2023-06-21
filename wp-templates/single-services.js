@@ -25,7 +25,6 @@ export default function Component(props) {
     return <>Loading...</>;
   }
 
-
   const { title: siteTitle, description: siteDescription } =
     props?.data?.generalSettings;
   const primaryMenu = props?.data?.headerMenuItems?.nodes ?? [];
@@ -52,12 +51,14 @@ export default function Component(props) {
           <Container>
             <ServiceHero
               serviceTitle={serviceTitle}
-              image={heroimage?.node}
+              heroimage={heroimage?.sourceUrl}
               heroCopy={heroCopy}
               heroBtnText={heroBtnText}
               heroBtnUrl={heroBtnUrl}
             />
-            <HireUs />
+            <HireUs
+              case1={case1?.sourceUrl}
+            />
             <CtaButton />
             <HornCards />
             <AboutUs />
@@ -83,12 +84,13 @@ Component.query = gql`
       id
         servicesOptions {
           heroimage {
-            altText
-            uri
-          }
+              altText
+              sourceUrl
+              uri
+            }
           case1 {
             altText
-            uri
+            sourceUrl
           }
           case2 {
             altText

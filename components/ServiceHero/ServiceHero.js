@@ -7,17 +7,18 @@ import Image from 'next/image';
 
 let cx = className.bind(styles);
 
-export default function QuoteHero({level = 'h1', className, serviceTitle, heroCopy, heroBtnText, heroBtnUrl, image, ...props }) {
+export default function QuoteHero({level = 'h1', className, serviceTitle, heroCopy, heroBtnText, heroBtnUrl, heroimage, ...props }) {
 
   return (
     <div className={cx(['component', className])}>
         <div className={cx('hero_img_wrap')}>
         <Image
             className={cx('hero_img')}
-            src={image}
-            width='355'
-            height='421'
+            layout='fill'
+            src={heroimage}
+
             priority='priority'
+            sizes="(max-width: 768px) 100vw"
         />
         </div>
         <div className={cx('copy')}>

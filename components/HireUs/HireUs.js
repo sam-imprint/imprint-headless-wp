@@ -26,7 +26,7 @@ export default function HireUs({level = 'h2', className, case1, ...props }) {
             <div className={cx('wp_hero')}>
             <Image
                 className={cx('wp_logo')}
-                src={props.uri}
+                src={case1}
                 alt={props.altText}
                 width='158'
                 height='96'
