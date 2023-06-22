@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from './NavigationMenu.module.scss';
 import stylesFromWP from './NavigationMenuClassesFromWP.module.scss';
 import { flatListToHierarchical } from '@faustwp/core';
+import { ServicesMegaMenu } from '../ServicesMegaMenu';
 
 let cx = classNames.bind(styles);
 let cxFromWp = classNames.bind(stylesFromWP);
@@ -34,9 +35,12 @@ export default function NavigationMenu({ menuItems, className }) {
             </li>
           );
         })}
+        <ServicesMegaMenu />
       </ul>
     );
   }
+
+
 
   return (
     <nav

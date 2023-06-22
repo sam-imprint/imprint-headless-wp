@@ -87,3 +87,18 @@ li.nav_btn {
 .accent {
 	color:#E11F26;
 }
+
+.megmenu_serv {
+	background-color:red;
+	position:absolute;
+    width: 97vw;
+    max-width: 1440px;
+    right: -1rem;
+    top: 100%;
+	display:none;
+}
+
+.meg_menu:hover ~ .megmenu_serv, .megmenu_serv:hover{
+	background-color:white;
+	display:block;
+}
