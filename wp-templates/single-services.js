@@ -44,7 +44,6 @@ export default function Component(props) {
     card2title,
     card2,
     card3title,
-    
     card3, 
     case1,
     case2,
