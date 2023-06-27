@@ -5,6 +5,8 @@ import styles from './NavigationMenu.module.scss';
 import stylesFromWP from './NavigationMenuClassesFromWP.module.scss';
 import { flatListToHierarchical } from '@faustwp/core';
 import { ServicesMegaMenu } from '../ServicesMegaMenu';
+import React, { useState, useEffect, useRef } from 'react';
+import { ContactModal } from '../ContactModal';
 
 let cx = classNames.bind(styles);
 let cxFromWp = classNames.bind(stylesFromWP);
@@ -14,12 +16,35 @@ export default function NavigationMenu({ menuItems, className }) {
     return null;
   }
 
+  // ContactModal DOM query selector and ref
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const ref = useRef();
+
+  useEffect(() => {
+    const button = ref.current.querySelector('.contact_btn');
+    if (button) {
+      const handleOpenModal = () => {
+        setIsModalOpen(true);
+      };
+      button.addEventListener('click', handleOpenModal);
+
+      // Clean up function
+      return () => {
+        button.removeEventListener('click', handleOpenModal);
+      };
+    }
+  }, []);
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   // Based on https://www.wpgraphql.com/docs/menus/#hierarchical-data
   const hierarchicalMenuItems = flatListToHierarchical(menuItems);
 
   function renderMenu(items) {
     return (
-      <ul className={cx('menu')}>
+      <ul className={cx('menu')} ref={ref}>
         {items.map((item) => {
           const { id, path, label, children, cssClasses } = item;
 
@@ -36,6 +61,7 @@ export default function NavigationMenu({ menuItems, className }) {
           );
         })}
         <ServicesMegaMenu />
+        <ContactModal isOpen={isModalOpen} onRequestClose={handleCloseModal} />
       </ul>
     );
   }
