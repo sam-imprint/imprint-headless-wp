@@ -1,1 +1,17 @@
 @import 'styles/breakpoints';
+
+.contact_modal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+
+    @media (max-width: $breakpoint-small) {
+
+    }
+
+}

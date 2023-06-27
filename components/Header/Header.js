@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Container, NavigationMenu, SkipNavigationLink, NavButton } from '../../components';
+import { Container, NavigationMenu, SkipNavigationLink } from '../../components';
 import styles from './Header.module.scss';
+import { ContactModal } from '../ContactModal';
 
 let cx = classNames.bind(styles);
 
@@ -12,8 +13,31 @@ export default function Header({
 }) {
   const [isNavShown, setIsNavShown] = useState(false);
 
+   // ContactModal DOM query selector and ref
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const ref = useRef();
+ 
+   useEffect(() => {
+     const button = ref.current.querySelector('.contact_btn');
+     if (button) {
+       const handleOpenModal = () => {
+         setIsModalOpen(true);
+       };
+       button.addEventListener('click', handleOpenModal);
+ 
+       // Clean up function
+       return () => {
+         button.removeEventListener('click', handleOpenModal);
+       };
+     }
+   }, []);
+ 
+   const handleCloseModal = () => {
+     setIsModalOpen(false);
+   };
+
   return (
-    <header className={cx('component')}>
+    <header className={cx('component')}  ref={ref}>
       <SkipNavigationLink />
         <Container>
           <div className={cx('navbar')}>
@@ -45,6 +69,7 @@ export default function Header({
             />
         </div>
       </Container>
+      <ContactModal isOpen={isModalOpen} onRequestClose={handleCloseModal} />
     </header>
   );
 }

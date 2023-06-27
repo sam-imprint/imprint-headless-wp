@@ -13,6 +13,7 @@ let cx = classNames.bind(styles);
     isOpen={isOpen}
     onRequestClose={onRequestClose}
     contentLabel="Contact Modal"
+    className={cx('contact_modal')}
   >
     <h2>Contact Us</h2>
     <p>Phone: 970-518-4491</p>
