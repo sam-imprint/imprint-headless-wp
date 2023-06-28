@@ -1,3 +1,5 @@
+@import "styles/breakpoints";
+
 .component {
     display:flex;
     flex-direction:column;
@@ -81,4 +83,12 @@
   .embla__slide {
     flex: 0 0 35%;
     min-width: 0;
+
+    @media (max-width: $breakpoint-small) {
+		flex: 0 0 50%;
+	}
+
+    @media (max-width: $breakpoint-extra-small) {
+		flex: 0 0 75%;
+	}
   }

@@ -24,11 +24,17 @@ const GET_INDUSTRY_LIST = gql`
   }
 `;
 
-useEmblaCarousel.globalOptions = { loop: true }
+useEmblaCarousel.globalOptions = {
+  breakpoints: {
+    '(max-width: 480px)': { align: 'start' },
+  },
+   loop: true }
 
 export default function Industries({ className }) {
   const { loading, error, data } = useQuery(GET_INDUSTRY_LIST);
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'center' });
+
+
 
   useEffect(() => {
     if (emblaApi) {
