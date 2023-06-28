@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import className from 'classnames/bind';
 import Image from 'next/image';
 import styles from './CaseStudy.module.scss';
@@ -35,9 +35,36 @@ let studies = [
 
 export default function CaseStudy({ className }) {
 
-    const studyComponents= studies.map((study) => (
-    <div className={cx('study_wrap')}>
-        <div className={cx('image_wrap')}>
+    const backgroundImagesRef = useRef(Array(studies.length).fill('https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/case-study-bg.svg'));
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+          const handleScroll = () => {
+            const { scrollY } = window;
+            for (let i = 0; i < studies.length; i++) {
+              const element = document.querySelector(`.bg_scroll${i}`);
+              if (element) {
+                const rect = element.getBoundingClientRect();
+                const elemTop = window.scrollY + rect.top; // element's position relative to the document
+                const elemCenter = elemTop + rect.height / 2; // center of the element relative to the document
+                const isVisible = elemCenter < scrollY + window.innerHeight/2 && elemCenter > scrollY - window.innerHeight/2;
+                const newImage = isVisible ? (scrollY > 50 ? 'https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/06/case-study-bg-scroll-alt.svg' : 'https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/case-study-bg.svg') : 'https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/case-study-bg.svg';
+                if (newImage !== backgroundImagesRef.current[i]) {
+                  backgroundImagesRef.current[i] = newImage;
+                  element.style.backgroundImage = `url(${newImage})`;
+                }
+              }
+            }
+          };
+          window.addEventListener('scroll', handleScroll);
+          return () => window.removeEventListener('scroll', handleScroll);
+        }
+      }, []); // empty dependency array to add the listener only once
+  
+
+    const studyComponents= studies.map((study, index) => (
+    <div className={cx('study_wrap')} >
+        <div className={cx('image_wrap', `bg_scroll${index}`)} key={index}>
         <Image
         className={cx(['study_image'])}
         src={study.image}
