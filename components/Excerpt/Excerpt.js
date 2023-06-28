@@ -21,7 +21,7 @@ export default function Post({
           <a>
             <FeaturedImage
               image={featuredImage}
-              layout="responsive"
+              
               className={styles.featuredImage}
             />
           </a>
