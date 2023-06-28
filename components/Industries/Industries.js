@@ -1,44 +1,73 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import className from 'classnames/bind';
 import styles from './Industries.module.scss';
-import Image from 'next/image';
+import useEmblaCarousel from 'embla-carousel-react';
+import { gql, useQuery } from '@apollo/client';
 import Link from 'next/link';
-
+import Image from 'next/image';
 
 let cx = className.bind(styles);
 
-let industries = [
-  { title: "Startups", link: "/", heroImage: 'https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Startups-Thumb-CLIPPED.jpg'},
-  { title: "E-Commerce", link: "/", heroImage: 'https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Ecommerce-Thumb-CLIPPED.jpg'},
-  { title: "Growth Stage", link: "/", heroImage: 'https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Growth-Thumb-CLIPPED.jpg'},
+const GET_INDUSTRY_LIST = gql`
+  query GetIndustryList {
+    industries {
+      nodes {
+        title
+        uri
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
+`;
 
-];
+useEmblaCarousel.globalOptions = { loop: true }
 
 export default function Industries({ className }) {
-  const industryComponents= industries.map((industry) => (
-    <div className={cx('cards')}>
-    <Link href={industry.link}>
-    <a>
-    <Image
-    className={cx('industry_hero')}
-    src={industry.heroImage}
-    alt={industry.title}
-    width='332'
-    height='283'
-    />
-    <div className={cx('title')}>{industry.title}</div>
-    </a>
-    </Link>
-    </div>
-));
+  const { loading, error, data } = useQuery(GET_INDUSTRY_LIST);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'center' });
+
+  useEffect(() => {
+    if (emblaApi) {
+      console.log(emblaApi.slideNodes()) // Access API
+    }
+  }, [emblaApi])
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :</p>;
 
   return (
     <div className={cx(['component', className])}>
       <div className={cx('copy')}><h2>Who We <span className={cx('headline_red')}>Serve</span></h2></div>
-      <div className={cx('cards_wrap')}>
-        {industryComponents}
+      <div ref={emblaRef} className={cx('cards_wrap', 'embla')}>
+        <div className={cx('embla__container')}>
+          {data.industries.nodes.map((industry) => (
+
+            <div className={cx('embla__slide', 'cards')} key={industry.uri}>
+              <Link href={industry.uri}>
+              <a>
+              <div className={cx("embla__slide__inner")}>
+                <Image 
+                className={cx('industry_hero')}
+                src={industry.featuredImage?.node?.sourceUrl} 
+                alt={industry.title} 
+                width='332'
+                height='283'
+                />
+                <div className={cx('title')}>
+                  {industry.title}
+                </div>
+              </div>
+              </a>
+            </Link>
+            </div>
+
+          ))}
+        </div>
       </div>
     </div>
-
   );
 }

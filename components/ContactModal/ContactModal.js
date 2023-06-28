@@ -15,6 +15,7 @@ let cx = classNames.bind(styles);
     contentLabel="Contact Modal"
     className={cx('contact_modal')}
   >
+    <button className={cx('modal_close')} onClick={onRequestClose}>Close</button>
     <h2>Contact Us</h2>
     <p>Phone: 970-518-4491</p>
     <p>Address: 815 14th St SW, Loveland CO 80537</p>
@@ -37,7 +38,7 @@ let cx = classNames.bind(styles);
       </label>
       <input type="submit" value="Submit" />
     </form>
-    <button onClick={onRequestClose}>Close</button>
+    
   </Modal>
   );
 }
