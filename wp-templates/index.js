@@ -4,6 +4,7 @@ import frontPage from './front-page';
 import page from './page';
 import single from './single';
 import SingleService from './single-service';
+import SingleIndustry from './single-industry';
 
 export default {
   category,
@@ -12,4 +13,5 @@ export default {
   page,
   single,
   'single-service': SingleService,
+  'single-industry': SingleIndustry,
 };
