@@ -29,6 +29,8 @@ export default function Services({ className, ...props }) {
   if (error) return <p>Error :</p>;
 
   const serviceComponents = data.services.nodes.map(({ title, uri, servicesOptions }) => (
+    <Link href={uri}>
+    <a>
     <div className={cx('service_card')} key={uri}>
       <div className={cx('bg_image')}>
         <Image 
@@ -40,12 +42,12 @@ export default function Services({ className, ...props }) {
       </div>
       <h3>{title}</h3>
 
-      <Link href={uri}>
-        <a>
+
           <button>{title}</button>
-        </a>
-      </Link>
+
     </div>
+    </a>
+      </Link>
   ));
 
   return (

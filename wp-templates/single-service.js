@@ -8,7 +8,6 @@ import {
   Container,
   EntryHeader,
   NavigationMenu,
-  ContentWrapper,
   SEO,
   OurWork,
   CtaButton,
@@ -19,7 +18,7 @@ import {
   ServiceHero,
 } from '../components';
 
-export default function Component(props) {
+export default function SingleService(props) {
   // Loading state for previews
   if (props.loading) {
     return <>Loading...</>;
@@ -120,7 +119,7 @@ export default function Component(props) {
   );
 }
 
-Component.query = gql`
+SingleService.query = gql`
   ${BlogInfoFragment}
   ${NavigationMenu.fragments.entry}
   query GetService(
@@ -192,7 +191,7 @@ Component.query = gql`
   }
 `;
 
-Component.variables = ({ databaseId }, ctx) => {
+SingleService.variables = ({ databaseId }, ctx) => {
   return {
     databaseId,
     headerLocation: MENUS.PRIMARY_LOCATION,

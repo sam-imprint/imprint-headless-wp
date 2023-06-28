@@ -3,7 +3,7 @@ import tag from './tag';
 import frontPage from './front-page';
 import page from './page';
 import single from './single';
-import SingleService from './single-services';
+import SingleService from './single-service';
 
 export default {
   category,
@@ -11,5 +11,5 @@ export default {
   'front-page': frontPage,
   page,
   single,
-  'single-services': SingleService,
+  'single-service': SingleService,
 };
