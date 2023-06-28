@@ -5,6 +5,7 @@ import page from './page';
 import single from './single';
 import SingleService from './single-service';
 import SingleIndustry from './single-industry';
+import SingleTeam from './single-team-members';
 
 export default {
   category,
@@ -14,4 +15,5 @@ export default {
   single,
   'single-service': SingleService,
   'single-industry': SingleIndustry,
+  'single-team-members' : SingleTeam,
 };
