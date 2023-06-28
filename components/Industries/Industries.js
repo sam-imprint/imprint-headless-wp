@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import className from 'classnames/bind';
 import styles from './Industries.module.scss';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -42,6 +42,14 @@ export default function Industries({ className }) {
     }
   }, [emblaApi])
 
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :</p>;
 
@@ -73,6 +81,24 @@ export default function Industries({ className }) {
 
           ))}
         </div>
+      </div>
+      <div className={cx('nav_btns')}>
+      <button className={cx('embla__prev')} onClick={scrollPrev}>                
+                <Image 
+                src='https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Black-Form-Arrow.svg' 
+                alt='Previous Slide Button'
+                width='28'
+                height='16'
+                />
+                </button>
+      <button className={cx('embla__next')} onClick={scrollNext}>
+                <Image 
+                src='https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Black-Form-Arrow.svg' 
+                alt='Next Slide Button'
+                width='28'
+                height='16'
+                />
+      </button>
       </div>
     </div>
   );

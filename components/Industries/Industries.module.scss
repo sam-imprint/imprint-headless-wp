@@ -92,3 +92,21 @@
 		flex: 0 0 75%;
 	}
   }
+
+  .nav_btns {
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    cursor:pointer;
+
+    button {
+        background-color:transparent;
+        border:none;
+        font-size:0;
+    }
+
+    .embla__prev {
+        transform:rotate(180deg);
+    }
+  }
