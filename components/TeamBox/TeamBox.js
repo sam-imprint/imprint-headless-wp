@@ -3,6 +3,7 @@ import className from 'classnames/bind';
 import styles from './TeamBox.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import { gql, useQuery } from '@apollo/client';
 
 let members = [
     { name: "Alex Wells", title: "CEO + Co-Founder", headShot: 'https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Alex-SPEC-400-591-ID.png'},
@@ -15,26 +16,57 @@ let members = [
     { name: "Alyssa Wells", title: "Partnerships + Public Relations", headShot: 'https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Alyssa-SPEC-400-591-ID.png'},
 ];
 
+const GET_TEAM_LIST = gql`
+  query GetTeamList {
+    team {
+      nodes {
+        team {
+          teamHeadshot {
+            altText
+            sourceUrl
+          }
+          teamPosition
+          teamName
+        }
+        uri
+      }
+    }
+  }
+`;
+
 let cx = className.bind(styles);
 
 export default function TeamBox({ className }) {
-    const memberComponents= members.map((member) => (
+
+  const { loading, error, data } = useQuery(GET_TEAM_LIST);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
+
+    const memberComponents= data.team.nodes.map((node) => (
         <div className={cx('card_wrap')}>
-        <Link href="/">
+        <Link key={node.uri} href={node.uri}>
         <a>
         <div className={cx('member_card')}>
         <div className={cx('member_image')}>
         <Image 
           className={cx('member_headshot')} 
-          src={member.headShot}
+          src={node.team.teamHeadshot.sourceUrl}
           width='400px'
           height='591px'
-          alt={member.name}
+          alt={node.team.teamHeadshot.altText}
+          
         />
-        <p className={cx('member_title')}>{member.title}</p>
+        <p className={cx('member_title')}>{node.team.teamPosition}</p>
         </div>
         <div className={cx('member_name')}>        
-        <h3>{member.name}</h3>
+        <h3>{node.team.teamName}</h3>
         </div>
 
         </div>
@@ -52,3 +84,4 @@ export default function TeamBox({ className }) {
     </div>
   );
 }
+

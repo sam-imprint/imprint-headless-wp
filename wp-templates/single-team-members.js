@@ -11,6 +11,7 @@ import {
   ContentWrapper,
   FeaturedImage,
   SEO,
+  TeamEntry
 } from '../components';
 
 export default function SingleTeam(props) {
@@ -24,6 +25,7 @@ export default function SingleTeam(props) {
   const primaryMenu = props?.data?.headerMenuItems?.nodes ?? [];
   const footerMenu = props?.data?.footerMenuItems?.nodes ?? [];
   const { title, content, featuredImage } = props.data.teamMember;
+  const { teamHeadshot, teamPosition, teamName, teamBio1 } = props.data.teamMember.team;
 
   return (
     <>
@@ -39,11 +41,14 @@ export default function SingleTeam(props) {
       />
       <Main>
         <>
-          <EntryHeader
-            title={title}
-            image={featuredImage?.node}
-          />
           <Container>
+            <TeamEntry 
+            teamHeadshot={teamHeadshot.sourceUrl}
+            headshotAlt={teamHeadshot?.altText}
+            teamPosition={teamPosition}
+            teamName={teamName}
+            teamBio1={teamBio1}
+            />
             <ContentWrapper content={content} />
           </Container>
         </>
@@ -67,6 +72,15 @@ SingleTeam.query = gql`
       title
       content
       ...FeaturedImageFragment
+      team {
+        teamBio1
+        teamName
+        teamHeadshot {
+          altText
+          sourceUrl
+        }
+        teamPosition
+      }
     }
     generalSettings {
       ...BlogInfoFragment

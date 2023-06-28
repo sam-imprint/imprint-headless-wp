@@ -33,3 +33,4 @@ export { HireUs } from './HireUs';
 export { AboutUs } from './AboutUs';
 export { ServicesMegaMenu } from './ServicesMegaMenu';
 export { ContactModal } from './ContactModal';
+export { TeamEntry } from './TeamEntry';
