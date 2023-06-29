@@ -1,3 +1,5 @@
+@import 'styles/breakpoints';
+
 // Base styles
 
 *,
@@ -103,13 +105,14 @@ li.nav_btn {
 	box-shadow: 0px 5px 4px -4px rgba(0, 0, 0, 0.1);
 }
 
+@media (min-width: $breakpoint-small) {
 .meg_menu:hover ~ .megmenu_serv, .megmenu_serv:hover{
 	background-color:white;
 	display:flex;
 	justify-content: space-around;
 }
+}
 
 .ReactModal__Overlay {
 	z-index:99999999;
 }
-

@@ -70,9 +70,11 @@
 .primary-navigation {
 	display: none;
 	width: 100%;
+	
 
 	&.show {
 		display: block;
+		height:100vh;
 	}
 
 	@media (min-width: $breakpoint-small) {
