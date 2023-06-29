@@ -89,7 +89,7 @@ li.nav_btn {
 }
 
 .megmenu_serv {
-	background-color:red;
+	background-color:#E11F26;
 	position:absolute;
     width: 97vw;
     max-width: 1440px;
@@ -106,6 +106,7 @@ li.nav_btn {
 .meg_menu:hover ~ .megmenu_serv, .megmenu_serv:hover{
 	background-color:white;
 	display:flex;
+	justify-content: space-around;
 }
 
 .ReactModal__Overlay {
