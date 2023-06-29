@@ -6,7 +6,7 @@ import {
   Footer,
   Main,
   Container,
-  EntryHeader,
+  IndustryEntry,
   NavigationMenu,
   ContentWrapper,
   FeaturedImage,
@@ -39,7 +39,7 @@ export default function Component(props) {
       />
       <Main>
         <>
-          <EntryHeader
+          <IndustryEntry
             title={title}
             image={featuredImage?.node}
           />

@@ -34,3 +34,4 @@ export { AboutUs } from './AboutUs';
 export { ServicesMegaMenu } from './ServicesMegaMenu';
 export { ContactModal } from './ContactModal';
 export { TeamEntry } from './TeamEntry';
+export { IndustryEntry } from './IndustryEntry';

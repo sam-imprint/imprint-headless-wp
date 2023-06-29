@@ -1,0 +1,50 @@
+@import 'styles/breakpoints';
+
+.component {
+	color: var(--wpe--color--white);
+	position: relative;
+	margin: 0 auto 2rem auto;
+	max-width:1100px;
+	display:flex;
+	flex-direction:row;
+
+	@media (min-width: $breakpoint-small) {
+		margin-bottom: 5rem;
+	}
+}
+
+.has-image {
+	--wpe--color--title: var(--wpe--color--white);
+}
+
+.text,
+.image {
+	margin: auto;
+	text-align: left;
+}
+
+.text {
+	position: relative;
+}
+
+.title {
+	line-height: 1.25;
+	font-size: 5rem;
+	color:#E11F26;
+	text-transform:uppercase;
+
+	@media (max-width: $breakpoint-small) {
+		font-size: 3rem;
+	}
+}
+
+.byline {
+	font-weight: var(--wpe--font-weight--medium);
+	font-size: 1.2rem;
+}
+
+.image {
+	position: relative;
+	width: 332px;
+	height: 238px;
+}
