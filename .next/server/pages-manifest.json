@@ -2,7 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
   "/api/faust/[[...route]]": "pages/api/faust/[[...route]].js",
-  "/[...wordpressNode]": "pages/[...wordpressNode].js"
+  "/": "pages/index.js",
+  "/case-studies": "pages/case-studies.js",
+  "/blog": "pages/blog.js"
 }
