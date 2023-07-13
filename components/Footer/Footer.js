@@ -3,6 +3,7 @@ import { Container, NavigationMenu } from '../../components';
 import styles from './Footer.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
 
 let cx = classNames.bind(styles);
 
@@ -23,6 +24,13 @@ export default function Footer({ title, menuItems }) {
           </a>
         </Link>
         <NavigationMenu menuItems={menuItems} />
+        <ul className={cx('social_icons')}>
+          <li><FaInstagram size="2rem"/></li>
+          <li><FaFacebookF size="2rem"/></li>
+          <li><FaYoutube size="2rem"/></li>
+          <li><FaTwitter size="2rem"/></li>
+          <li><FaLinkedinIn size="2rem"/></li>
+        </ul>
         <p className={cx('copyright')}>{`© ${year} ${title}. All Rights Reserved`}</p>
       </Container>
     </footer>
