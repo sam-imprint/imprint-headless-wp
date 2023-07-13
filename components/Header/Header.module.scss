@@ -83,3 +83,18 @@
 	}
 
 }
+.menu_btn {
+	width:2rem;
+	height:2rem;
+	cursor:pointer;
+	background-color:transparent;
+	border:none;
+
+	&:hover {
+		color:#E11F26;
+	}
+
+	@media (min-width: $breakpoint-small) {
+		display:none;
+	}
+}

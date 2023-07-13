@@ -1,0 +1,136 @@
+@import 'styles/breakpoints';
+
+.menu_modal {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    
+
+    .modal_close {
+        position:absolute;
+        top: 2rem;
+        right:2rem;
+        background-color:transparent;
+        width:2rem;
+        border:none;
+        padding:0;
+        cursor:pointer;
+        transition: ease-in-out .2s;
+
+        &:hover {
+            right:1.5rem;
+            color:#E11F26;
+        }
+    }
+
+    .info_link {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:2rem;
+
+        a {
+        font-size:1.5rem;
+        font-weight:500;
+        margin-bottom:1rem;
+        text-decoration:none;
+
+        &:hover {
+            text-decoration: underline;
+            color:#E11F26;
+        }
+    }
+}
+
+    @media (min-width: $breakpoint-extra-small) {
+        .menu_modal {
+            display:none;
+        }
+    }
+
+    form {
+        display:flex;
+        justify-content: center;
+        flex-direction:column;
+        margin-top:2rem;
+    
+        .field_row {
+            margin-bottom:10px;
+            text-align:right;
+            display:flex;
+            flex-direction:row;
+            justify-content: flex-end;
+            align-items:center;
+            margin-right: 20%;
+    
+            label {
+                margin-right:15px;
+                text-transform: uppercase;
+                font-size:1rem;
+    
+                &::after {
+                    content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Black-Form-Arrow.svg);
+                    margin-left:10px;
+                }
+            }
+    
+            input {
+                width:60%;
+                padding:.5rem;
+                border:solid 1px #c3c3c3;
+                border-radius:4px;
+            }
+    
+            &:focus-within {
+                label {
+                    color:#E11F26;
+    
+                    &::after {
+                        content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Red-Form-Arrow.svg);
+                    }
+                }
+            }
+        }
+    
+        button {
+            width:640px;
+            background-color:#E11F26;
+            color:#fff;
+            border:none;
+            border-radius:4px;
+            padding:1rem 6%;
+            font-size:1.63rem;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+            display:block;
+            position: relative;
+            margin-top:1.5rem;
+            text-transform: uppercase;
+            text-decoration:none;
+    
+                &::after {
+                    content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/White-Arrow-2.svg);
+                    margin-left:1rem;
+                }
+    
+                &:hover {
+                background-color:#fff;
+                color:#0c0c0c;
+                box-shadow: 0 0 8px 2px rgba(0,0,0,.12);
+            
+                    text-decoration:underline;
+    
+                    &::after {
+                        content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/CTA-Red-Arrow-2.svg);
+                    }
+                }
+        }
+    }
+
+}
+
