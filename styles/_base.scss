@@ -116,3 +116,34 @@ li.nav_btn {
 .ReactModal__Overlay {
 	z-index:99999999;
 }
+
+.pagination_wrap {
+	text-align:center;
+	
+	button {
+		color:#fff;
+		text-transform:uppercase;
+		font-weight:500;
+		background:#E11F26;
+		border:solid 1px #fff;
+		border-radius:4px;
+		padding:.5rem 2rem;
+		width:10rem;
+		margin-right:4rem;
+		cursor:pointer;
+
+		&:hover {
+			background-color:#fff;
+			color:#E11F26;
+			border: solid 1px #E11F26;
+		}
+
+		&:disabled {
+			display:none;
+
+		}
+
+	}
+
+
+}

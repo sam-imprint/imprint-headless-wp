@@ -17,28 +17,26 @@ import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
 export default function Page(props) {
-  const [cursor, setCursor] = useState(null);
+  const postsPerPage = 10;
+  const [cursors, setCursors] = useState([null]);
   const { loading, error, data, fetchMore } = useQuery(Page.query, {
-    variables: { ...Page.variables(), first: 10, after: cursor },
+    variables: { ...Page.variables(), first: postsPerPage, after: cursors[cursors.length - 1] },
     notifyOnNetworkStatusChange: true,
   });
 
   const loadMorePosts = (direction) => {
-    let newCursor;
     if (direction === 'next') {
-      newCursor = data.posts.pageInfo.endCursor;
+      setCursors((prev) => [...prev, data.posts.pageInfo.endCursor]);
     } else if (direction === 'prev') {
-      newCursor = data.posts.pageInfo.startCursor;
+      setCursors((prev) => prev.slice(0, -1));
     }
-
-    setCursor(newCursor);
   };
 
   useEffect(() => {
-    if (cursor) {
+    if (cursors[cursors.length - 1]) {
       fetchMore({
         variables: {
-          after: cursor,
+          after: cursors[cursors.length - 1],
         },
         updateQuery: (prev, { fetchMoreResult }) => {
           if (!fetchMoreResult) return prev;
@@ -46,7 +44,7 @@ export default function Page(props) {
         },
       });
     }
-  }, [cursor, fetchMore]);
+  }, [cursors, fetchMore]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -61,7 +59,7 @@ export default function Page(props) {
     <>
       <SEO title={siteTitle} description={siteDescription} />
       <Header
-        title={title}
+        title={siteTitle}
         description={siteDescription}
         menuItems={primaryMenu}
       />
@@ -78,8 +76,8 @@ export default function Page(props) {
               featuredImage={post.featuredImage?.node}
             />
           ))}
-          <div>
-            <button onClick={() => loadMorePosts('prev')} disabled={!data.posts.pageInfo.hasPreviousPage}>
+          <div className="pagination_wrap">
+            <button onClick={() => loadMorePosts('prev')} disabled={cursors.length <= 1 || cursors[1] === null}>
               Previous
             </button>
             <button onClick={() => loadMorePosts('next')} disabled={!data.posts.pageInfo.hasNextPage}>
@@ -92,6 +90,7 @@ export default function Page(props) {
     </>
   );
 }
+
 
 Page.query = gql`
   ${BlogInfoFragment}
