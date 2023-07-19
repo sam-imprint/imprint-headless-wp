@@ -21,6 +21,10 @@
     h1 {
         margin-bottom:0;
     }
+
+    @media (max-width: $breakpoint-small) {
+        padding:2rem 0;
+    }
 }
 
 .hero_img_wrap {
@@ -41,6 +45,9 @@
         bottom:-4%;
         right:0%;
     }
+    @media (max-width: $breakpoint-small) {
+        margin-bottom:1rem;
+    }
 }
 
 .copy {
@@ -50,6 +57,10 @@
     p {
         font-size:1rem;
         line-height:150%;
+    }
+
+    @media (max-width: $breakpoint-small) {
+        width:100%;
     }
 }
 .title {
@@ -73,9 +84,7 @@
     font-weight:600;
     text-transform:uppercase;
     text-align:center;
-    margin:4rem auto;
     cursor: pointer;
-    width:fit-content;
 
     &::after {
         content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/CTA-Red-Arrow-2.svg);
@@ -85,6 +94,12 @@
 
     &:hover {
         text-decoration:underline;
+    }
+
+    @media (max-width: $breakpoint-small) {
+        width:80%;
+        display:block;
+        text-align:left;
     }
 }
 
