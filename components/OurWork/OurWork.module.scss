@@ -29,16 +29,25 @@
     font-weight:600;
 
 	@media (max-width: $breakpoint-small) {
-		font-size: 3rem;
+		font-size: 2rem;
 	}
 }
 
 .logo_wrap {
+
+	@media (max-width: $breakpoint-small) {
+		display:flex;
+	}
+
     &::before {
         content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/06/our_work_flags.svg);
         position:absolute;
         left:0;
         top:50%;
+
+		@media (max-width: $breakpoint-small) {
+			display:none;
+		}
     }
     &::after {
         content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/06/our_work_flags.svg);
@@ -46,5 +55,9 @@
         right:0;
         top:50%;
         transform:rotate(180deg);
+
+		@media (max-width: $breakpoint-small) {
+			display:none;
+		}
     }
 }
