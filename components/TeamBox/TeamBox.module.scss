@@ -1,3 +1,5 @@
+@import 'styles/breakpoints';
+
 .component {
 	text-align: left;
 	padding:.0;
@@ -31,6 +33,17 @@
     flex-wrap: wrap;
     justify-content: center;
     gap:4rem;
+
+    @media (max-width: $breakpoint-small) {
+        gap:.5rem;
+    }
+
+    .card_wrap {
+        @media (max-width: $breakpoint-small) {
+            width:48%;
+        }
+    }
+    
 }
 
 .members_wrap a {
@@ -49,6 +62,10 @@
         position:relative;
         transition:all .2s ease-in-out;
 
+        @media (max-width: $breakpoint-small) {
+            background-position:0 30px;
+        }
+
         .member_title {
             color:#fff;
             font-size:1.63rem;
@@ -61,6 +78,11 @@
             padding:8rem 0 1rem 0;
             width:100%;
             background: linear-gradient(180deg, rgba(225, 31, 38, 0) 0%, #E11F26 100%);
+
+            @media (max-width: $breakpoint-small) {
+                font-size:1rem;
+                padding: 4rem 0.5rem 1rem 0.5rem;
+            }
         }
     
         &::after{
@@ -70,6 +92,10 @@
             right:-10.25%;
             display:block;
             transform:rotate(-90deg);
+
+            @media (max-width: $breakpoint-small) {
+                display:none;
+            }
         }
 
         &:hover {
@@ -77,6 +103,10 @@
 
             &::after {
                 content:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Accent-Flags-Black.svg);
+
+                @media (max-width: $breakpoint-small) {
+                    display:none;
+                }
             }
         }
 
@@ -88,11 +118,21 @@
         color:#fff;
         padding:0 .5rem;
 
+        @media (max-width: $breakpoint-small) {
+            background:transparent;
+            color:#0c0c0c;
+            text-align:center;
+        }
+
         h3 {
             font-size:1.13rem;
             font-weight:400;
             text-transform: uppercase;
             margin-bottom:0;
+
+            @media (max-width: $breakpoint-small) {
+                font-size:1rem;
+            }
         }
     }
 

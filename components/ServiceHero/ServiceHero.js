@@ -9,6 +9,7 @@ let cx = className.bind(styles);
 
 export default function QuoteHero({level = 'h1', className, serviceTitle, heroCopy, heroBtnText, heroBtnUrl, heroimage, heroAlt, ...props }) {
 
+
   return (
     <div className={cx(['component', className])}>
         <div className={cx('hero_img_wrap')}>
