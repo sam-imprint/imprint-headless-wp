@@ -1,3 +1,5 @@
+@import 'styles/breakpoints';
+
 .component {
 	color: var(--wpe--footer--color);
 	background: linear-gradient(180deg, rgba(192, 192, 192, 0) 0%, rgba(192, 192, 192, 0.13) 100%);
@@ -10,6 +12,10 @@
 
 	ul {
 		gap:4rem;
+
+		@media (max-width: $breakpoint-small) {
+			gap:1rem;
+		}
 	}
 
 	a {
