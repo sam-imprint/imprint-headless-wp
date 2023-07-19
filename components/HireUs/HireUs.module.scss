@@ -60,10 +60,18 @@
     margin-bottom:1rem;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: $breakpoint-small) {
+        flex-direction:column;
+        margin-bottom:0;
+    }
 }
 .wp_hero h3 {
     text-transform:uppercase;
     width:60%;
+    @media (max-width: $breakpoint-small) {
+        width:100%;
+    }
 }
 .cta_link {
     color:#E11F26;
@@ -87,7 +95,7 @@
 }
 .hire_list ul {
     @media (max-width: $breakpoint-small) {
-        padding:1rem;
+        padding-left:1rem;
     }
 }
 .hire_list li {
