@@ -21,6 +21,10 @@
     max-width:500px;
     margin:0 auto 2.5rem auto;
 
+    @media (max-width: $breakpoint-small) {
+        margin: 0 auto;
+    }
+
 .headline_red {
     color:#E11F26;
 }
