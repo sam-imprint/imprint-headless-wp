@@ -18,6 +18,11 @@
         align-items: center;
         gap:2rem;
         margin-bottom:6rem;
+
+        @media (max-width: $breakpoint-small) {
+            flex-direction:column;
+        }
+        
     }
 
     .image_wrap {
@@ -29,21 +34,40 @@
         padding-right:2px;
         width:40%;
         text-align:right;
+
+        @media (max-width: $breakpoint-small) {
+            display:none;
+        }
     }
 
     .case_data {
         width:60%;
         margin-top:4rem;
+
+        @media (max-width: $breakpoint-small) {
+            width:100%;
+            margin-top:0;
+        }
     }
     
     .study_hero {
         display:flex;
         flex-direction:row;
         justify-content: space-between;
-        align-items: center;
+        align-items:start;
+
+        @media (max-width: $breakpoint-small) {
+            flex-direction:column;
+            align-items:center;
+            gap:.5rem;
+        }
 
         .study_copy {
             width:70%;
+
+            @media (max-width: $breakpoint-small) {
+            width:100%;
+            }
         }
 
         h3 {
@@ -90,6 +114,7 @@
         margin-top:1rem;
   
 
+
         .stat {
             width:47%;
             display:flex;
@@ -99,6 +124,12 @@
             margin-bottom:1rem;
             padding:1rem;
             border-bottom:solid 4px #E11F26;
+
+            @media (max-width: $breakpoint-small) {
+                flex-direction: column;
+                gap:.5rem;
+                margin-left:0rem;
+            }
 
             .data {
                 font-size:2rem;
