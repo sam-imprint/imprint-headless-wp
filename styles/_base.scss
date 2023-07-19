@@ -129,6 +129,8 @@ li.nav_btn {
 .pagination_wrap {
 	text-align:center;
 	
+
+
 	button {
 		color:#fff;
 		text-transform:uppercase;
@@ -138,8 +140,11 @@ li.nav_btn {
 		border-radius:4px;
 		padding:.5rem 2rem;
 		width:10rem;
-		margin-right:4rem;
 		cursor:pointer;
+
+		&:first-of-type {
+			margin-right:4rem;
+		}
 
 		&:hover {
 			background-color:#fff;
@@ -150,6 +155,11 @@ li.nav_btn {
 		&:disabled {
 			display:none;
 
+		}
+
+		@media (max-width: $breakpoint-small) {
+			width:8rem;
+			padding:.5rem 1rem;
 		}
 
 	}
