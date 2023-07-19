@@ -110,7 +110,16 @@ li.nav_btn {
 	background-color:white;
 	display:flex;
 	justify-content: space-around;
+
+
 }
+
+}
+
+@media (max-width:$breakpoint-small) {
+	li.menu-item.nav_btn.contact_btn {
+		display:none;
+	}
 }
 
 .ReactModal__Overlay {
