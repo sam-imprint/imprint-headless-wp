@@ -19,14 +19,26 @@
 
 .about_copy, .about_img {
     width:45%;
+
+    @media (max-width: $breakpoint-small) {
+        width:100%;
+    }
 }
 
 .about_copy {
     padding:2rem;
     margin-right:20px;
+
+    @media (max-width: $breakpoint-small) {
+        padding:0;
+    }
     
     h2 {
         margin-bottom:2rem;
+
+        @media (max-width: $breakpoint-small) {
+            margin-bottom:0;
+        }
     }
     .title {
         text-transform:uppercase;
