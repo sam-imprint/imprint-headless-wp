@@ -11,6 +11,10 @@
 	@media (min-width: $breakpoint-small) {
 		margin-bottom: 5rem;
 	}
+
+	@media (max-width: $breakpoint-small) {
+		flex-direction:column;
+	}
 }
 
 .has-image {

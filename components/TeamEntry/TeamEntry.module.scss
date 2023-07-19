@@ -1,3 +1,5 @@
+@import "styles/breakpoints";
+
 .hero_wrap {
     display:flex;
     flex-direction:row;
@@ -5,14 +7,27 @@
     align-items: center;
     margin-bottom:2rem;
 
+    @media (max-width: $breakpoint-small) {
+        flex-direction:column;
+    }
+
     .copy_wrap {
         width:60%;
         padding:1rem 0 0 4rem;
+
+        @media (max-width: $breakpoint-small) {
+            width:100%;
+            padding:0;
+        }
 
         h1 {
             font-size:4.5rem;
             text-transform:uppercase;
             color:#E11F26;
+
+            @media (max-width: $breakpoint-small) {
+                line-height:100%;
+            }
         }
     }
 }
