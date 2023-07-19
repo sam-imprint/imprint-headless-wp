@@ -25,7 +25,7 @@ export default function HireUs({
         <Heading level={level}>
             <span className={cx('title')} dangerouslySetInnerHTML={{ __html: bulletsTitleH2 ?? '' }} />
         </Heading>
-        <ul className={cx('hire_list')} dangerouslySetInnerHTML={{ __html: bulletsList ?? '' }} />
+        <div className={cx('hire_list')} dangerouslySetInnerHTML={{ __html: bulletsList ?? '' }} />
         </div>
 
         <div className={cx('wp_wrap')}>
