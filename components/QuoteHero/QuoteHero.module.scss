@@ -17,6 +17,7 @@
 	background-image:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Grey-Cross-BG.svg),url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Grey-Cross-BG.svg),url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Grey-Cross-BG.svg),url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Grey-Cross-BG.svg);
 	background-position: top left, top right, bottom right, bottom left;
 	background-repeat: no-repeat;
+    gap:2rem;
 
     h1 {
         margin-bottom:0;
@@ -27,7 +28,7 @@
     }
 }
 .copy {
-	width:70%;
+	width:65%;
 
     p {
         font-size:1rem;

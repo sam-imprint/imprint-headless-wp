@@ -16,6 +16,12 @@ query GetServiceArchive {
       uri
       servicesOptions {
         serviceTitle
+        cardTagline
+        cardDescriptor
+        cardBackground {
+          altText
+          sourceUrl
+        }
       }
     }
   }
@@ -29,21 +35,20 @@ export default function Services({ className, ...props }) {
   if (error) return <p>Error :</p>;
 
   const serviceComponents = data.services.nodes.map(({ title, uri, servicesOptions }) => (
-    <Link href={uri}>
+    <Link href={uri} key={uri}>
     <a>
     <div className={cx('service_card')} key={uri}>
       <div className={cx('bg_image')}>
         <Image 
-          src='https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Fractional-CMO-BG-Light.jpg'
+          src={servicesOptions.cardBackground.sourceUrl}
           width='640px'
           height='640px'
-          alt='BG Image'
+          alt={servicesOptions.cardBackground.altText}
         />
       </div>
-      <h3>{title}</h3>
-
-
-          <button>{title}</button>
+      <h3>{servicesOptions.cardDescriptor}</h3>
+      <p>{servicesOptions.cardTagline}</p>
+      <button>{title}</button>
 
     </div>
     </a>
