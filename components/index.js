@@ -36,3 +36,4 @@ export { ContactModal } from './ContactModal';
 export { TeamEntry } from './TeamEntry';
 export { IndustryEntry } from './IndustryEntry';
 export { MenuModal } from './MenuModal';
+export { VideoModal } from './VideoModal';

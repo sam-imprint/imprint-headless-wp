@@ -56,8 +56,8 @@
     background:url(https://sbx-dev.imprint-digital.com/wp-content/uploads/2023/05/Play-BG.png);
     background-repeat:no-repeat;
     background-size:contain;
-    width:240px;
-    height:60px;
+    width:250px;
+    height:63px;
     color:#fff;
     font-weight:600;
     font-size:1.13rem;
@@ -65,7 +65,10 @@
     padding:.5rem .2rem .5rem 1rem;
     position:absolute;
     bottom:-1rem;
-    right:-2rem;
+    right:-1rem;
+    border: none;
+    text-align: left;
+    cursor:pointer;
 
     @media (max-width: $breakpoint-small) {
         left:-1rem;
@@ -77,6 +80,14 @@
         position:absolute;
         right:-1.25rem;
         top:.5rem;
+        transition: ease-in-out .2s;
+    }
+
+    &:hover {
+
+        &::after {
+            right:-1.5rem;
+        }
     }
 }
 

@@ -1,0 +1,44 @@
+@import 'styles/breakpoints';
+
+.video_modal {
+    width:100vw;
+    height:100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    .video_wrap {
+        position:relative;
+        width: 80%;
+        height: 53.6%;
+        padding: 4rem;
+
+        
+        @media (max-width: $breakpoint-extra-small) {
+            width:100%;
+            height:90vw;
+            padding:4rem 0;
+        }
+
+        button {
+            position:absolute;
+            top:0;
+            right:0;
+            background-color:transparent;
+            border:none;
+            width:10rem;
+            padding:0;
+            transition: ease-in-out .2s;
+            cursor:pointer;
+
+            &:hover {
+                right:-1rem;
+            }
+
+            @media (max-width: $breakpoint-extra-small) {
+                width:5rem;
+            }
+
+        }
+    }
+}
