@@ -46,6 +46,12 @@ export default function Component(props) {
         </>
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />
+      <noscript
+        dangerouslySetInnerHTML={{
+      __html: `< src="https://www.googletagmanager.com/ns.html?id=GTM-N4Q75P3"
+      height="0" width="0" style="display:none;visibility:hidden" />`,
+        }}
+      />
     </>
   );
 }

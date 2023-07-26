@@ -51,6 +51,7 @@ export default function Component(props) {
         </>
       </Main>
       <Footer title={siteTitle} menuItems={footerMenu} />
+      
     </>
   );
 }
