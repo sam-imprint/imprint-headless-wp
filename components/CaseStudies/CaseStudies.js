@@ -27,7 +27,7 @@ export default function CaseStudies({ className }) {
       <div className={cx('copy')}>
         <h2><span className={cx('headline_red')}>Up </span>And To The Right</h2>
         <p>Your business deserves a marketing partner that can deliver. See our clients success and learn more about how we can deliver results for your organization as well.</p>
-        <Link href="/"><span className={cx('cta_link')}>Success Stories</span></Link>
+        <Link href="/case-studies"><span className={cx('cta_link')}>Success Stories</span></Link>
         </div>
     </div>
 
