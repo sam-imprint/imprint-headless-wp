@@ -6,7 +6,7 @@ export default function CtaButton({
   }) {
     return (
       <button className={styles.component}>
-        <Link href="/">Get your free consultation</Link>
+        <Link href="/contact">Get your free consultation</Link>
       </button>
     );
   }
