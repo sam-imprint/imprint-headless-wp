@@ -1,28 +1,39 @@
 
 import classNames from 'classnames/bind';
-import { gql } from '@apollo/client';
+import { gql, useQuery } from '@apollo/client';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './ServicesMegaMenu.module.scss';
 
+
 let cx = classNames.bind(styles);
 
-export default function ServicesMegaMenu({ className }) {
+const GET_SERVICE_ARCHIVE = gql`
+query GetServiceArchive {
+  services {
+    nodes {
+      title
+      uri
+    }
+  }
+}
+`;
+
+export default function ServicesMegaMenu() {
+
+  const { loading, error, data } = useQuery(GET_SERVICE_ARCHIVE);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :</p>;
 
   return (
     <div className={cx(['megmenu_serv'])}>
       <div className={cx(['inner_menu'])}>
         <h3>Imprint Digital Services</h3>
         <ul className={cx(['services_menu'])}>
-            <li><Link href="/">Fractional CMO</Link></li>
-            <li><Link href="/">Fractional CMO</Link></li>
-            <li><Link href="/">Fractional CMO</Link></li>
-            <li><Link href="/">Fractional CMO</Link></li>
-            <li><Link href="/">Fractional CMO</Link></li>
-            <li><Link href="/">Fractional CMO</Link></li>
-            <li><Link href="/">Fractional CMO</Link></li>
-            <li><Link href="/">Fractional CMO</Link></li>
-            <li><Link href="/">Fractional CMO</Link></li>
+        {data.services.nodes.map(({ title, uri }) => (
+            <li><Link href={uri}>{title}</Link></li>
+            ))}
         </ul>
       </div>
       <div className={cx(['cases'])}>
