@@ -49,6 +49,8 @@ export default function SingleService(props) {
     case3, 
     bulletsTitleH2, 
     bulletsList, 
+    whitepaperimage,
+    whitepaperimagealt,
     whitePaperTitleH3,
     whitePaperCopy,
     whitePaperBtnUrl,
@@ -93,6 +95,8 @@ export default function SingleService(props) {
               case3={case3?.sourceUrl}
               bulletsTitleH2={bulletsTitleH2}
               bulletsList={bulletsList}
+              whitePaperImage={whitepaperimage?.sourceUrl}
+              whitePaperImageAlt={whitepaperimagealt}
               whitePaperTitleH3={whitePaperTitleH3}
               whitePaperCopy={whitePaperCopy}
               whitePaperBtnUrl={whitePaperBtnUrl}
@@ -165,10 +169,14 @@ SingleService.query = gql`
           card3title
           card3 
           serviceTitle
+          whitepaperimage {
+            sourceUrl
+          }
+          whitepaperimagealt
           whitePaperBtnText
           whitePaperBtnUrl
           whitePaperCopy
-          whoWeAreBtnCopy
+          whoWeAreBtnUrl
           whitePaperTitleH3
           whoWeAreBtnText
           whoWeAreCopy

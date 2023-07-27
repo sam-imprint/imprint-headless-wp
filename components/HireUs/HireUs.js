@@ -14,6 +14,8 @@ export default function HireUs({
     bulletsTitleH2, 
     bulletsList, 
     whitePaperTitleH3,
+    whitePaperImage,
+    whitePaperImageAlt,
     whitePaperCopy,
     whitePaperBtnUrl,
     whitePaperBtnText,
@@ -32,8 +34,8 @@ export default function HireUs({
             <div className={cx('wp_hero')}>
             <Image
                 className={cx('wp_logo')}
-                src={case3}
-                alt={props.altText}
+                src={whitePaperImage}
+                alt={whitePaperImageAlt}
                 width='158'
                 height='96'
                 priority='priority'

@@ -56,7 +56,12 @@
         display:inline-block;
         position:relative;
         display:block;
-        
+        transition:all ease-in-out .2s;
+
+        &:hover {
+            filter:saturate(1.5);
+        }
+
     }
 
 
