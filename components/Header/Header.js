@@ -9,7 +9,6 @@ import { FaBars } from 'react-icons/fa';
 let cx = classNames.bind(styles);
 
 export default function Header({ menuItems }) {
-  const [isNavShown, setIsNavShown] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const ref = useRef();
@@ -60,7 +59,7 @@ export default function Header({ menuItems }) {
             </Link>
           </div>
           <NavigationMenu
-            className={cx(['primary-navigation', isNavShown ? 'show' : undefined])}
+            className={cx('primary-navigation')}
             menuItems={menuItems}
           />
           <button className={cx('menu_btn')}>

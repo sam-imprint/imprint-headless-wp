@@ -20,8 +20,10 @@
 }
 
 .brand {
-	font-weight: var(--wpe--font-weight--bold);
-	font-size: 1.6rem;
+	font: {
+		weight: var(--wpe--font-weight--bold);
+		size: 1.6rem;
+	}
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -35,12 +37,6 @@
 		align-items: center;
 		flex-direction: row;
 	}
-}
-
-.description {
-	margin: .3rem 0 0 0;
-	font-size: 0.8rem;
-	opacity: 0.9;
 }
 
 .nav-toggle {
@@ -70,7 +66,6 @@
 .primary-navigation {
 	display: none;
 	width: 100%;
-	
 
 	&.show {
 		display: block;
@@ -81,8 +76,8 @@
 		display: block;
 		width: auto;
 	}
-
 }
+
 .menu_btn {
 	width:2rem;
 	height:2rem;
@@ -91,7 +86,7 @@
 	border:none;
 
 	&:hover {
-		color:#E11F26;
+		color:var(--id--color--red);
 	}
 
 	@media (min-width: $breakpoint-small) {

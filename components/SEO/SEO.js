@@ -28,6 +28,7 @@ export default function SEO({ title, description, imageUrl, url }) {
           })(window,document,'script','dataLayer','GTM-N4Q75P3');`,
         }}
       /> */}
+        <script defer async src='https://cdn.trustindex.io/loader.js'></script>
         <meta property="og:type" content="website" />
         <meta property="twitter:card" content="summary_large_image" />
 
